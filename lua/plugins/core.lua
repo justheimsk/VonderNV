@@ -16,11 +16,7 @@ return {
       require('noice').setup()
     end,
     dependencies = {
-      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
       "MunifTanjim/nui.nvim",
-      -- OPTIONAL:
-      --   `nvim-notify` is only needed, if you want to use the notification view.
-      --   If not available, we use `mini` as the fallback
       "rcarriga/nvim-notify",
     }
   },
@@ -31,11 +27,6 @@ return {
       vim.o.timeout = true
       vim.o.timeoutlen = 300
     end,
-    opts = {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    }
   },
   {
     'nvim-lualine/lualine.nvim',
@@ -51,8 +42,6 @@ return {
   {
     'willothy/veil.nvim',
     dependencies = {
-      -- All optional, only required for the default setup.
-      -- If you customize your config, these aren't necessary.
       "nvim-telescope/telescope.nvim",
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope-file-browser.nvim"
@@ -60,8 +49,6 @@ return {
     config = function()
       require('veil').setup()
     end
-    -- or configure with:
-    -- opts = { ... }
   },
   {
     event = "VeryLazy",
@@ -73,21 +60,17 @@ return {
   {
     "ibhagwan/fzf-lua",
     event = "VeryLazy",
-    -- optional for icon support
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
-      -- calling `setup` is optional for customization
       require("fzf-lua").setup({})
     end
   },
   {
     "kylechui/nvim-surround",
-    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    version = "*",
     event = "VeryLazy",
     config = function()
-      require("nvim-surround").setup({
-        -- Configuration here, or leave empty to use defaults
-      })
+      require("nvim-surround").setup({})
     end
   },
   {
@@ -99,15 +82,9 @@ return {
       "LazyGitFilter",
       "LazyGitFilterCurrentFile",
     },
-    -- optional for floating window border decoration
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
-    -- setting the keybinding for LazyGit with 'keys' is recommended in
-    -- order to load the plugin when the command is run for the first time
-    keys = {
-      { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
-    }
   },
   {
     "lewis6991/gitsigns.nvim",
@@ -116,5 +93,5 @@ return {
     end
   },
   "mbbill/undotree",
-  "dstein64/vim-startuptime"
+  "stevearc/dressing.nvim"
 }

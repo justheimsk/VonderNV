@@ -12,9 +12,11 @@ vim.cmd [[
 require("config.lazy")
 require("config.lspconfig")
 require("config.mappings")
-require("config.whichkey")
 require("config.statusline")
 
+vim.cmd('Gitsigns attach')
+vim.cmd('Gitsigns toggle_current_line_blame')
+vim.wo.relativenumber = true
 vim.cmd [[colorscheme dracula]]
 vim.cmd('set wrap!')
 vim.api.nvim_create_autocmd("BufWritePre", {
