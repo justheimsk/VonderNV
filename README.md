@@ -8,5 +8,5 @@ This is a simple NeoVim configuration created by me, it is focused on performanc
 ## Requirements
 #### Arch Linux
 ```sh
-sudo pacman -Syu fzf git g++ make lazygit
+sudo pacman -Syu fzf git make lazygit
 ```
